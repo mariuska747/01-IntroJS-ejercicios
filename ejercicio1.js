@@ -20,6 +20,8 @@ Desarrollo Backend con Node.js:
 Fecha de inicio: 2024-10-21
 */
 
+// SOLUCIÓN 1
+
 const Student = {
 
     name : 'Pepa',
@@ -32,6 +34,8 @@ const Student = {
 console.log(Student.name)
 console.log(Student.classes[0][1])
 
+
+// SOLUCIÓN 2
 
 function Modules(title, initialDate){
     this.title = title;

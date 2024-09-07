@@ -3,7 +3,7 @@ const calcularPromedio = (listaNums) => {
     let sumaNums = 0
 
     /*
-    EL bug estaba en el <= de la longitud de la lista puesto que tiene que ser length-1 el valor de i maximo
+    EL bug estaba en el <= de la longitud de la lista puesto que tiene que ser length-1 el valor de indice maximo
     */
 
     for (let i = 0; i < listaNums.length; i++){
