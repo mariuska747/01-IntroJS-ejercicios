@@ -7,18 +7,24 @@ EJERCICIO 3.1
 // SOLUCION 1
 const joinFunction = (lista) => {
 
-    let path = lista;
-    const extension = lista.pop();
-    path = lista.join("/");
+    let url = [...lista];
+    const extension = url.pop();
+    const path = url.join("/");
     const file = `.${extension}`;
+    //reconstruyo la lista
+    //lista = lista.push(extension)
+    
     return path + file;
+
 
 }
 const input1 = ['Downloads','Videos','capture','mp4']
 
 console.log(joinFunction(input1)) // Downloads/Videos/capture.mp4
+console.log(input1)
 
-//SOLUCION 2 (NO FUNCIONA)
+
+//SOLUCION 2 
 const joinFunction2 = (lista) => {
     const lastELementIndex = lista.length - 1;
     const extension = lista[lastELementIndex];
@@ -28,14 +34,29 @@ const joinFunction2 = (lista) => {
     file = `${fileName}.${extension}`;
     
     let path = ""
-    for(let i=0; i < lastELementIndex; i++) {
+    for(let i=0; i < fileNameIndex; i++) {
         path = path + lista[i] + "/";
     }
     
     return path + file;
 }
 
-console.log(joinFunction2(input1)) //Downloads/Videos/Videos.capture
+console.log(joinFunction2(input1)) // Downloads/Videos/capture.mp4
+
+// solucion 3 de compañero con slice
+const buildPath = (input) => {
+    // recuperamos la sublista resultante de quitar el ultimo elemento del input y unimos los elementos en una cadena de caracteres metiendo '/' entre los elementos
+    const inputPath = input.slice(0, -1).join('/');
+    // recuperamos el ultimo elemento del input
+    const inputExtension = input.slice(-1);
+    // unimos el path y la extension con un '.'
+    const inputPathExtension = `${inputPath}.${inputExtension}`; // inputPath + '.' + inputExtension
+    return inputPathExtension;
+  };
+  
+
+
+
 
 
 /*
